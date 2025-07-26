@@ -16,9 +16,7 @@ import { supabase } from '@/lib/supabaseClient';
 
 const API_BASE_URL =
   import.meta.env.VITE_API_BASE_URL ||
-  (import.meta.env.PROD
-    ? 'https://your-production-backend-url.com/api'
-    : 'http://localhost:3000/api');
+    'https://localhost:3000/api';
 
 /**
  * API Configuration Interface
