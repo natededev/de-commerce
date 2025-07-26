@@ -8,10 +8,6 @@
 
 /* E-commerce Professional Design System */
 @layer base {
-  html, body, #root {
-    overflow-x: hidden !important;
-    max-width: 100vw !important;
-  }
   :root {
     /* Base colors */
     --background: 0 0% 100%;

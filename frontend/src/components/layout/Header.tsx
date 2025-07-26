@@ -70,11 +70,11 @@ export const Header: React.FC = () => {
 
   return (
     // Sticky header with backdrop blur for modern glass effect
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/90 overflow-x-hidden">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/90">
       {/* Top Bar: displays shipping and contact info */}
-      <div className="bg-primary text-primary-foreground py-2 overflow-x-hidden">
-        <div className="container mx-auto px-4 max-w-full overflow-x-hidden">
-          <div className="flex items-center justify-between text-xs min-w-0 overflow-x-hidden">
+      <div className="bg-primary text-primary-foreground py-2">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between text-xs">
             {/* Shipping and returns info */}
             <div className="flex items-center space-x-4">
               <span>
@@ -107,8 +107,8 @@ export const Header: React.FC = () => {
       </div>
 
       {/* Main Header: logo, navigation, search, cart, user */}
-      <div className="container mx-auto px-4 max-w-full overflow-x-hidden">
-        <div className="flex h-20 items-center justify-between min-w-0 overflow-x-hidden">
+      <div className="container mx-auto px-4">
+        <div className="flex h-20 items-center justify-between">
           {/* Logo: shows image if set, otherwise text */}
           <Link
             to="/"
@@ -144,7 +144,7 @@ export const Header: React.FC = () => {
           {/* Desktop Navigation */}
           {/* Desktop navigation menu with dropdown support */}
           <nav
-            className="hidden lg:flex items-center space-x-4 xl:space-x-8 min-w-0 overflow-x-hidden"
+            className="hidden lg:flex items-center space-x-8"
             aria-label="Main navigation"
           >
             {getMainNavigation().map(item => {
@@ -207,7 +207,7 @@ export const Header: React.FC = () => {
 
           {/* Search Bar */}
           {/* Desktop search bar with focus animation */}
-          <div className="hidden md:flex flex-1 max-w-lg mx-2 sm:mx-4 md:mx-8 min-w-0 overflow-x-hidden">
+          <div className="hidden md:flex flex-1 max-w-lg mx-8">
             <div
               className={`relative w-full transition-all duration-200 ${isSearchFocused ? 'scale-105' : ''}`}
             >
@@ -228,10 +228,11 @@ export const Header: React.FC = () => {
 
           {/* Right Side Actions */}
           {/* Cart, user menu, and mobile menu button */}
-          <div className="flex items-center space-x-2 min-w-0 overflow-x-hidden">
-            {/* Currency Selector Dropdown */}
-            <CurrencySelector className="w-32" />
-            
+          <div className="flex items-center space-x-2">
+            {/* Currency Selector Dropdown (desktop only) */}
+            <div className="hidden lg:block">
+              <CurrencySelector className="w-32" />
+            </div>
             {/* Cart button with item count badge */}
             <Link to="/cart" className="relative" aria-label="View cart">
               <Button variant="ghost" size="icon" aria-label="View cart">
@@ -246,7 +247,6 @@ export const Header: React.FC = () => {
                 )}
               </Button>
             </Link>
-
             {/* User menu: shows sign in or user icon */}
             {user ? (
               <div className="relative" data-user-menu>
@@ -300,7 +300,6 @@ export const Header: React.FC = () => {
                 </Button>
               </Link>
             )}
-
             {/* Mobile menu toggle button */}
             <Button
               variant="ghost"
@@ -316,7 +315,11 @@ export const Header: React.FC = () => {
 
         {/* Mobile Menu: navigation and search for small screens */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden border-t py-6 bg-background/95 backdrop-blur overflow-x-hidden">
+          <div className="lg:hidden border-t py-6 bg-background/95 backdrop-blur">
+            {/* Currency Selector for mobile */}
+            <div className="mb-4">
+              <CurrencySelector className="w-full" />
+            </div>
             {/* Mobile navigation links */}
             <nav
               className="flex flex-col space-y-3 mb-6"
