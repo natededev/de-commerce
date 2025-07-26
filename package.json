@@ -1,0 +1,77 @@
+{
+  "name": "de-commerce-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Full-stack e-commerce application with React frontend and Node.js backend",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && npm run dev",
+    "build": "npm run build:frontend && npm run build:backend",
+    "build:frontend": "cd frontend && npm run build",
+    "build:backend": "cd backend && npm run build",
+    "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install",
+    "clean": "npm run clean:frontend && npm run clean:backend",
+    "clean:frontend": "cd frontend && rimraf dist node_modules/.vite",
+    "clean:backend": "cd backend && rimraf dist",
+    "lint": "npm run lint:frontend && npm run lint:backend",
+    "lint:frontend": "cd frontend && npm run lint",
+    "lint:backend": "cd backend && npm run lint",
+    "lint:fix": "npm run lint:fix:frontend && npm run lint:fix:backend",
+    "lint:fix:frontend": "cd frontend && npm run lint -- --fix",
+    "lint:fix:backend": "cd backend && npm run lint -- --fix",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+    "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+    "type-check": "npm run type-check:frontend && npm run type-check:backend",
+    "type-check:frontend": "cd frontend && npx tsc --noEmit",
+    "type-check:backend": "cd backend && npx tsc --noEmit",
+    "test": "npm run test:frontend && npm run test:backend",
+    "test:frontend": "cd frontend && npm run test",
+    "test:backend": "cd backend && npm run test",
+    "test:watch": "concurrently \"npm run test:watch:frontend\" \"npm run test:watch:backend\"",
+    "test:watch:frontend": "cd frontend && npm run test:watch",
+    "test:watch:backend": "cd backend && npm run test:watch",
+    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "start:frontend": "cd frontend && npm run preview",
+    "start:backend": "cd backend && npm start",
+    "health": "curl http://localhost:3000/health || echo 'Backend not running'",
+    "setup": "npm run install:all && echo 'Setup complete! Run npm run dev to start development'"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/compression": "^1.8.1",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/morgan": "^1.9.10",
+    "concurrently": "^8.2.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.3",
+    "jiti": "^2.5.0",
+    "prettier": "^3.6.2",
+    "rimraf": "^6.0.1",
+    "tsx": "^4.20.3"
+  },
+  "engines": {
+    "node": ">=22.0.0 <23.0.0",
+    "npm": ">=10.0.0"
+  },
+  "keywords": [
+    "e-commerce",
+    "react",
+    "nodejs",
+    "typescript",
+    "fullstack",
+    "monorepo"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.52.0",
+    "jose": "^6.0.12",
+    "typescript-eslint": "^8.37.0"
+  }
+}
