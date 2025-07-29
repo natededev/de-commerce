@@ -18,7 +18,7 @@ const NewsletterSection: React.FC = () => (
             type="email"
             placeholder="Enter your email address"
             autoComplete="email"
-            className="flex-1 px-6 py-4 border-0 rounded-lg bg-white/10 backdrop-blur text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/20"
+            className="flex-1 px-6 py-4 border-0 rounded-lg bg-white/10 backdrop-blur text-white placeholder-white/70"
           />
           <Button variant="secondary" size="lg" className="px-8">
             Subscribe

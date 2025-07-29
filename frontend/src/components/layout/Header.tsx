@@ -211,16 +211,16 @@ export const Header: React.FC = () => {
             <div
               className={`relative w-full transition-all duration-200 ${isSearchFocused ? 'scale-105' : ''}`}
             >
-              <Input
-                id="header-search-desktop"
-                name="search"
-                type="search"
-                placeholder="Search for premium products..."
-                className="w-full pl-12 pr-4 h-12 rounded-full border-2 focus:border-primary transition-colors"
-                aria-label="Search products"
-                onFocus={() => setIsSearchFocused(true)}
-                onBlur={() => setIsSearchFocused(false)}
-              />
+          <Input
+            id="header-search-desktop"
+            name="search"
+            type="search"
+            placeholder="Search for premium products..."
+            className="w-full pl-12 pr-4 h-12 rounded-full border-2 transition-colors"
+            aria-label="Search products"
+            onFocus={() => setIsSearchFocused(true)}
+            onBlur={() => setIsSearchFocused(false)}
+          />
               {/* Search icon */}
               <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
             </div>
@@ -344,7 +344,7 @@ export const Header: React.FC = () => {
                   name="search"
                   type="search"
                   placeholder="Search for premium products..."
-                  className="w-full pl-12 pr-4 h-12 rounded-full border-2 focus:border-primary transition-colors"
+                  className="w-full pl-12 pr-4 h-12 rounded-full border-2 transition-colors"
                   aria-label="Search products"
                 />
                 <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
