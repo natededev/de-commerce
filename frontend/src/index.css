@@ -1,11 +1,12 @@
+/* index.css: Global styles, Tailwind layers, and design system variables */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
 input:focus, textarea:focus, select:focus {
   outline: none !important;
   border-color: inherit !important;
   box-shadow: none !important;
 }
-/* index.css: Global styles, Tailwind layers, and design system variables */
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;

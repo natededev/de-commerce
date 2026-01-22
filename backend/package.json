@@ -35,7 +35,7 @@
   "author": "Your Name",
   "license": "MIT",
   "dependencies": {
-    "@supabase/supabase-js": "^2.39.7",
+    "@supabase/supabase-js": "^2.91.0",
     "bcryptjs": "^2.4.3",
     "compression": "^1.7.4",
     "cors": "^2.8.5",
@@ -63,13 +63,12 @@
     "@typescript-eslint/parser": "^8.37.0",
     "@vitest/ui": "^3.2.4",
     "eslint": "^9.31.0",
-    "supabase": "^2.31.8",
     "supertest": "^7.1.4",
     "tsx": "^4.19.2",
     "typescript": "^5.8.3",
     "vitest": "^3.2.4"
   },
   "engines": {
-    "node": ">=22.0.0 <23.0.0"
+    "node": ">=18.0.0"
   }
 }

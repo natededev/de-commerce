@@ -53,10 +53,11 @@
     "jiti": "^2.5.0",
     "prettier": "^3.6.2",
     "rimraf": "^6.0.1",
+    "supabase": "^2.72.8",
     "tsx": "^4.20.3"
   },
   "engines": {
-    "node": ">=22.0.0 <23.0.0",
+    "node": ">=18.0.0",
     "npm": ">=10.0.0"
   },
   "keywords": [
@@ -70,8 +71,11 @@
   "author": "Your Name",
   "license": "MIT",
   "dependencies": {
-    "@supabase/supabase-js": "^2.52.0",
+    "@supabase/supabase-js": "^2.91.0",
     "jose": "^6.0.12",
     "typescript-eslint": "^8.37.0"
+  },
+  "overrides": {
+    "tar": "7.5.6"
   }
 }
